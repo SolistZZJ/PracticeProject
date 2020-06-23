@@ -1,0 +1,30 @@
+PODS:
+  - AVOSCloud (11.6.7)
+  - MBProgressHUD (1.2.0)
+  - ReactiveObjC (3.1.1)
+  - SDWebImage (5.8.0):
+    - SDWebImage/Core (= 5.8.0)
+  - SDWebImage/Core (5.8.0)
+
+DEPENDENCIES:
+  - AVOSCloud (~> 11.0)
+  - MBProgressHUD
+  - ReactiveObjC
+  - SDWebImage
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AVOSCloud
+    - MBProgressHUD
+    - ReactiveObjC
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  AVOSCloud: 2668e39a72be5a4ede65ca0c98002f327d590dd2
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
+
+PODFILE CHECKSUM: 8d72f7cc1be86a951448c7be2fe316e550c850d0
+
+COCOAPODS: 1.9.1

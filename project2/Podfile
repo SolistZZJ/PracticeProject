@@ -1,0 +1,15 @@
+# Uncomment the next line to define a global platform for your project
+source ‘https://github.com/CocoaPods/Specs.git’
+platform :ios, '9.0'
+
+target 'project2' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for project2
+  pod 'ReactiveObjC'
+  pod 'MBProgressHUD'
+  pod 'SDWebImage'
+
+  pod 'AVOSCloud' , '~> 11.0'
+end

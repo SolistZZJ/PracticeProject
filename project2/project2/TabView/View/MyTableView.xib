@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MyTableView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="710"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="61U-wQ-e8U">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="710"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="61U-wQ-e8U" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1oI-lP-Ybj"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="61U-wQ-e8U" secondAttribute="bottom" id="MqS-9K-p97"/>
+                <constraint firstItem="61U-wQ-e8U" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WPA-Th-jlU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="61U-wQ-e8U" secondAttribute="trailing" id="tsU-Ol-avS"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="tableView" destination="61U-wQ-e8U" id="hYO-eR-CQr"/>
+            </connections>
+            <point key="canvasLocation" x="147.82608695652175" y="113.83928571428571"/>
+        </view>
+    </objects>
+</document>
