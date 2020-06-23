@@ -51,30 +51,30 @@
     self.usernameSig = _loginVC.usernameTextField.rac_textSignal;
     self.passwordSig = _loginVC.passwordTextField.rac_textSignal;
     
-    RACSignal *usernameIsValid = [RACSignal combineLatest:@[self.usernameSig, self.passwordSig] reduce:^id _Nonnull {
-        return @(self.username.length >= 8&&self.username.length <= 12);
-    }];
-    RACSignal *passwordIsValid = [RACSignal combineLatest:@[self.usernameSig, self.passwordSig] reduce:^id _Nonnull {
-        return @(self.password.length >= 8&&self.password.length <= 20);
-    }];
+//    RACSignal *usernameIsValid = [RACSignal combineLatest:@[self.usernameSig, self.passwordSig] reduce:^id _Nonnull {
+//        return @(self.username.length >= 8&&self.username.length <= 12);
+//    }];
+//    RACSignal *passwordIsValid = [RACSignal combineLatest:@[self.usernameSig, self.passwordSig] reduce:^id _Nonnull {
+//        return @(self.password.length >= 8&&self.password.length <= 20);
+//    }];
     
-    [usernameIsValid subscribeNext:^(id  _Nullable x) {
-        if ([x boolValue]) {
-            self.loginVC.usernameTextField.backgroundColor = [UIColor whiteColor];
-        }
-        else {
-            self.loginVC.usernameTextField.backgroundColor = [UIColor yellowColor];
-        }
-    }];
+//    [usernameIsValid subscribeNext:^(id  _Nullable x) {
+//        if ([x boolValue]) {
+//            self.loginVC.usernameTextField.backgroundColor = [UIColor whiteColor];
+//        }
+//        else {
+//            self.loginVC.usernameTextField.backgroundColor = [UIColor yellowColor];
+//        }
+//    }];
     
-    [passwordIsValid subscribeNext:^(id  _Nullable x) {
-        if ([x boolValue]) {
-            self.loginVC.passwordTextField.backgroundColor = [UIColor whiteColor];
-        }
-        else {
-            self.loginVC.passwordTextField.backgroundColor = [UIColor yellowColor];
-        }
-    }];
+//    [passwordIsValid subscribeNext:^(id  _Nullable x) {
+//        if ([x boolValue]) {
+//            self.loginVC.passwordTextField.backgroundColor = [UIColor whiteColor];
+//        }
+//        else {
+//            self.loginVC.passwordTextField.backgroundColor = [UIColor yellowColor];
+//        }
+//    }];
 }
 
 //绑定LoginBtn

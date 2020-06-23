@@ -13,6 +13,8 @@
 
 @property (strong, nonatomic) LoginViewModel *loginVM;
 
+@property (assign, nonatomic) BOOL isChecked;
+
 @end
 
 @implementation LoginViewController
@@ -28,6 +30,8 @@
 #pragma mark - 初始化
 
 - (void)config {
+    self.isChecked = NO;
+    
     //设置按钮
     [self configButton];
     
@@ -40,11 +44,14 @@
     //用户名或密码为空时，按钮不可用
     _loginButton.enabled = NO;
     
-    //设置可用时的按钮样式
-    [_loginButton setBackgroundImage:[self createImageWithColor:[UIColor orangeColor]] forState:UIControlStateNormal];
-    
+//    //设置可用时的按钮样式
+//    [_loginButton setBackgroundImage:[self createImageWithColor:[UIColor orangeColor]] forState:UIControlStateNormal];
+//    
     //设置不可用时的按钮样式
     [_loginButton setBackgroundImage:[self createImageWithColor:[UIColor grayColor]] forState:UIControlStateDisabled];
+    //设置圆角的大小
+    _loginButton.layer.cornerRadius = 25;
+    _loginButton.layer.masksToBounds = YES;
 }
 
 //初始化ViewModel
@@ -104,6 +111,26 @@
     UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return theImage;
+}
+
+
+#pragma mark - check按钮(额外)
+
+- (IBAction)checkButton:(UIButton *)btn {
+    if (self.isChecked == NO) {
+        [btn setImage:[UIImage imageNamed:@"check1"] forState:UIControlStateNormal];
+        self.isChecked = YES;
+    }
+    else {
+        [btn setImage:[UIImage imageNamed:@"check0"] forState:UIControlStateNormal];
+        self.isChecked = NO;
+    }
+}
+
+#pragma mark - 取消键盘响应
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.usernameTextField resignFirstResponder];
+    [self.passwordTextField resignFirstResponder];
 }
 
 /*
