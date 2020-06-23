@@ -10,7 +10,6 @@
 #import <ReactiveObjC.h>
 #import "TabViewModel.h"
 #import "MBProgressHUD+ZZJProgressHUD.h"
-#import "DataTableViewCell.h"
 #import "DetailViewController.h"
 #import "MyTableView.h"
 #import "ItemButton.h"

@@ -10,6 +10,7 @@ target 'project2' do
   pod 'ReactiveObjC'
   pod 'MBProgressHUD'
   pod 'SDWebImage'
+  pod 'Masonry'
 
   pod 'AVOSCloud' , '~> 11.0'
 end

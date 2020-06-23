@@ -14,13 +14,27 @@
 
 @implementation MyTableView
 
+#pragma mark - 初始化
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self configSubview];
+    }
+    return self;
+}
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+#pragma mark - 初始化子控件
+
+- (void)configSubview {
+    //初始化tableview
+    _tableView = [[UITableView alloc] init];
+    [self addSubview:_tableView];
+    [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.left.right.equalTo(self);
+    }];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
 }
 
 #pragma mark - tableView的代理方法
@@ -35,14 +49,19 @@
     return self.cellArray.count;
 }
 
+//返回cell高度
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 192;
+}
+
 //初始化cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    DataTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"dataCell%ld",(long)indexPath.row]];
+    MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"dataCell%ld",(long)indexPath.row]];
     if (!cell) {
-        cell = [[NSBundle mainBundle] loadNibNamed:@"DataTableViewCell" owner:nil options:nil].lastObject;
+        cell = [[MyTableViewCell alloc] initWithDataModel:self.cellArray[indexPath.row]];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    cell.dataModel = self.cellArray[indexPath.row];
+    //cell.dataModel = self.cellArray[indexPath.row];
     return cell;
 }
 

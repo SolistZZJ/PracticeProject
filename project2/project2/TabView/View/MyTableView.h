@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DataTableViewCell.h"
+#import "MyTableViewCell.h"
+#import <Masonry.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MyTableView : UIView
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) UITableView *tableView;
 
 
 @property (strong, nonatomic) NSNumber *page;

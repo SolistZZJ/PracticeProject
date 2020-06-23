@@ -79,7 +79,7 @@
     //初始化MyTableView
     self.tableViewArray = [NSMutableArray array];
     for (int i = 0; i < 3; ++i) {
-        MyTableView *myTableView = [[NSBundle mainBundle] loadNibNamed:@"MyTableView" owner:nil options:nil].lastObject;
+        MyTableView *myTableView = [[MyTableView alloc] init];
         myTableView.frame = CGRectMake(i*screenWidth, 0, screenWidth, CGRectGetHeight(self.tabScrollView.frame));
         myTableView.cellArray = [NSMutableArray array];
         myTableView.page = @(i);
@@ -95,7 +95,7 @@
     //根据dataArray的数目生成对应的button
     self.buttonArray = [NSMutableArray array];
     for (int i = 0; i < self.dataArray.count; ++i) {
-        ItemButton *itemButton = [[[NSBundle mainBundle] loadNibNamed:@"ItemButton" owner:nil options:nil] lastObject];
+        ItemButton *itemButton = [[ItemButton alloc] init];
         [itemButton setFrame:CGRectMake(0, 0, 70, 70)];
         [self.topSegmentView addSubview:itemButton];
         //设置button位置
